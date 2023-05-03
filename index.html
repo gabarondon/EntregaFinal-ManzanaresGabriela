@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/8da4fb2384.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>Mercafit🍏</title>
+</head>
+<body>
+
+    <header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+    <a class="navbar-brand ps-4"  href="index.html"> <img src="img/mercafitlogo_blanco.png" alt="personal logo" width="60%" "></a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ms-auto pe-5">
+          <li class="nav-item">
+            <a class="nav-link" href="#Products">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a id="aShowCart" class="nav-link" href="#" tabindex="-1" aria-disabled="true"> <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i> </a>
+          </li>
+        </ul>
+        </div>
+    </div>
+  </nav>
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <svg class="bd-placeholder-img"  width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption text-start" >
+            <h1>¿Quieres dar el primer paso?</h1>
+            <p>Escríbele a Mercafit y te ayudamos.</p>
+            <p><a class="btn btn-lg btn-primary" id="btnCarousel" href="https://wa.me/50762516975">Whatsapp</a></p>
+          </div>
+        </div>
+        <img src="img/MFBanner1.png" alt="" width="100%" >
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption">  
+          </div>
+        </div>
+        <img src="img/CollagenBG.png" alt="">
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption text-start" >
+            <h1>Fit9 Disponible</h1>
+            <p>Escríbele a Mercafit</p>
+            <p><a class="btn btn-lg btn-primary" id="btnCarousel"  href="https://wa.me/50762516975">Whatsapp</a></p>
+          </div>
+        </div>
+        <img src="img/fit9dispo.png" alt="" width="100%" >
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+</header>
+
+<div id="navShoppingCard" class="container-shopping-cart hide">
+  <div class="shopping-cart">
+    <div class="shopping-cart-header">
+      <i class="fa fa-shopping-cart cart-icon"></i><span id="navTotalItems" class="badge">0</span>
+      <div class="shopping-cart-total">
+        <span class="lighter-text">Total:</span>
+        <span id="navTotalPrice" class="main-color-text">0</span>
+      </div>
+    </div> <!--end shopping-cart-header -->
+
+    <ul id="ulShoppingCard" class="shopping-cart-items">
+    </ul>
+
+    <div id="btnVaciar" class="buttonOutline"><a >Vaciar Carrito</a></div>
+    <div id="btnCheckout" class="button"><a>Checkout</a></div>
+  </div> <!--end shopping-cart -->
+</div> <!--end container -->
+
+  <main>
+
+  
+<!-- Cards -->
+
+<div class="container_cards" id="Products">  
+     <div class="shoppingCard">
+        <img src="img/fit9.webp" alt="" class="productImage">
+        <div class="productSpecifications">
+        <h3>Fit 9</h3>
+        <p class="flavor">Daily pills</p>
+        <h5>$60</h4>
+        <div class="quantity">
+          <button class="plus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-plus" style="color: #212121;"></i>
+          </button>
+          <input type="number" name="name" value="1" id="inpFit9">
+          <button class="minus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-minus" style="color: #212121;"></i> </button>
+          <button id="Fit9"> Agregar </button>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="shoppingCard">
+        <img src="img/restore.webp" alt="" class="productImage">
+        <div class="productSpecifications">
+        <h3>Restore</h3>
+        <p class="flavor">Night pills</p>
+        <h5>$65</h4>
+        <div class="quantity">
+          <button class="plus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-plus" style="color: #212121;"></i>
+          </button>
+          <input type="number" name="name" value="1" id="inpRestore">
+          <button class="minus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-minus" style="color: #212121;"></i> </button>
+          <button id="Restore"> Agregar </button>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="shoppingCard">
+        <img src="img/05-SF-COLLAGEN-CARAMEL.webp" alt="" class="productImage">
+        <div class="productSpecifications">
+        <h3>Collagen</h3>
+        <p class="flavor">Caramel Macchiato🍮</p>
+        <h5>$65</h4>
+        <div class="quantity">
+          <button class="plus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-plus" style="color: #212121;"></i>
+          </button>
+          <input type="number" name="name" value="1" id="inpCaramelMacchiato🍮">
+          <button class="minus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-minus" style="color: #212121;"></i> </button>
+          <button id="CaramelMacchiato🍮"> Agregar </button>
+          </button>
+        </div>  
+      </div>
+    </div>
+</div>
+
+<div class="container_cards">  
+     <div class="shoppingCard">
+        <img src="img/13-SF-COLLAGEN-STRAWBERRY.webp" alt="" class="productImage">
+        <div class="productSpecifications">
+        <h3>Collagen</h3>
+        <p class="flavor">Strawberry🍓-Lemonade🍋</p>
+        <h5>$65</h4>
+        <div class="quantity">
+          <button class="plus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-plus" style="color: #212121;"></i>
+          </button>
+          <input type="number" name="name" value="1" id="inpStrawberry🍓-Lemonade🍋">
+          <button class="minus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-minus" style="color: #212121;"></i> </button>
+          <button id="Strawberry🍓-Lemonade🍋"> Agregar </button>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="shoppingCard">
+        <img src="img/collagen.png" alt="" class="productImage">
+        <div class="productSpecifications">
+        <h3>Collagen</h3>
+        <p class="flavor">Chocolate🍫</p>
+        <h5>$65</h4>
+        <div class="quantity">
+          <button class="plus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-plus" style="color: #212121;"></i>
+          </button>
+          <input type="number" name="name" value="1" id="inpChocolate🍫">
+          <button class="minus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-minus" style="color: #212121;"></i> </button>
+          <button id="Chocolate🍫"> Agregar </button>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="shoppingCard">
+        <img src="img/BCAAGrape.webp" alt="" class="productImage">
+        <div class="productSpecifications">
+        <h3>BCAA</h3>
+        <p class="flavor">Grape🍇</p>
+        <h5>$48</h4>
+        <div class="quantity">
+          <button class="plus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-plus" style="color: #212121;"></i>
+          </button>
+          <input type="number" name="name" value="1" id="inpGrape🍇">
+          <button class="minus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-minus" style="color: #212121;"></i> </button>
+          <button id="Grape🍇"> Agregar </button>
+          </button>
+        </div>  
+      </div>
+    </div>
+</div>
+
+<div class="container_cards">  
+     <div class="shoppingCard">
+        <img src="img/BCAALemonLime.webp" alt="" class="productImage">
+        <div class="productSpecifications">
+        <h3>BCAA</h3>
+        <p class="flavor">Lemon-Lime🍋</p>
+        <h5>$48</h4>
+        <div class="quantity">
+          <button class="plus-btn"  id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-plus" style="color: #212121;"></i>
+          </button>
+          <input type="number" name="name" value="1" id="inpLemon-Lime🍋">
+          <button class="minus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-minus" style="color: #212121;"></i> </button>
+          <button id="Lemon-Lime🍋"> Agregar </button>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="shoppingCard">
+        <img src="img/BCAAWatermelon.webp" alt="" class="productImage">
+        <div class="productSpecifications">
+        <h3>BCAA</h3>
+        <p class="flavor">Watermelon🍉</p>
+        <h5>$48</h4>
+        <div class="quantity">
+          <button class="plus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-plus" style="color: #212121;"></i>
+          </button>
+          <input type="number" name="name" value="1" id="inpWatermelon🍉">
+          <button class="minus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-minus" style="color: #212121;"></i> </button>
+          <button id="Watermelon🍉"> Agregar </button>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="shoppingCard">
+        <img src="img/ChocolateProtein.webp" alt="" class="productImage">
+        <div class="productSpecifications">
+        <h3>Whey Protein</h3>
+        <p class="flavor">Chocolate🍫</p>
+        <h5>$55</h4>
+        <div class="quantity">
+          <button class="plus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-plus" style="color: #212121;"></i>
+          </button>
+          <input type="number" name="name" value="1" id="inpProteChocolate🍫">
+          <button class="minus-btn" id="buttonSelection" type="button" name="button"> <i class="fa-solid fa-minus" style="color: #212121;"></i> </button>
+          <button id="ProteChocolate🍫"> Agregar </button>
+          </button>
+        </div>  
+      </div>
+    </div>
+</div>
+
+</main>
+
+
+    
+    <script src="./main.js"></script>
+
+    <!-- Script bootstrap -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <!-- Script bootstrap -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

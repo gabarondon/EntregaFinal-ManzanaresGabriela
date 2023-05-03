@@ -1,0 +1,13 @@
+[
+    {"name":"Cookies and cream🍪.","price":50,"stock":5},
+    {"name":"Fresa🍓","price":50,"stock":5},
+    {"name":"Chocolate🍫","price":65,"stock":2},
+    {"name":"Fit9","price":60,"stock":4},
+    {"name":"Restore","price":65,"stock":4},
+    {"name":"Strawberry🍓-Lemonade🍋","price":65,"stock":7},
+    {"name":"CaramelMacchiato🍮","price":65,"stock":10},
+    {"name":"ProteChocolate🍫","price":55,"stock":10},
+    {"name":"Watermelon🍉","price":48,"stock":12},
+    {"name":"Lemon-Lime🍋","price":48,"stock":12},
+    {"name":"Grape🍇","price":48,"stock":12}
+]
